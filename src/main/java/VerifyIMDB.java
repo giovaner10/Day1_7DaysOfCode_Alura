@@ -10,7 +10,7 @@ public class VerifyIMDB {
         HttpClient client = HttpClient.newHttpClient();
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://imdb-api.com/en/API/Top250Movies/<key>"))
+                .uri(URI.create("https://imdb-api.com/en/API/Top250Movies/k_o3v12a3v"))
                 .GET()
                 .build();
 
