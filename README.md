@@ -21,5 +21,7 @@ Explicando melhor, você vai usar essa API para pesquisar os top 250 filmes e im
 
 - Imprimir o corpo da resposta no console
 
+###Resultado:
+
 
 ![foto](https://github.com/giovaner10/templete_angular/blob/main/prints%20-arq%20sof/day1.png?raw=true)
