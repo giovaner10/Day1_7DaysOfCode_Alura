@@ -1,29 +1,23 @@
 import java.net.URI;
-import java.net.URISyntaxException;
+import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 public class VerifyIMDB {
 
 
-    public static HttpRequest getRequest() {
+    public static String getRequest(){
+        HttpClient client = HttpClient.newHttpClient();
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://imdb-api.com/en/API/Top250Movies/<key>"))
+                .GET()
+                .build();
 
 
-        HttpRequest request = null;
-
-        {
-            try {
-                request = HttpRequest
-                        .newBuilder()
-                        .uri(new URI("https://imdb-api.com/API/Search/k_12345678/leon%20the%20professional"))
-                        .GET()
-                        .build();
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
-        }
-
-
-        return request;
+        return client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                .thenApply(HttpResponse::body)
+                .join();
 
     }
 }
