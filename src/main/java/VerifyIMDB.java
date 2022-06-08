@@ -5,7 +5,7 @@ import java.net.http.HttpRequest;
 public class VerifyIMDB {
 
 
-    public HttpRequest getRequest() {
+    public static HttpRequest getRequest() {
 
 
         HttpRequest request = null;
